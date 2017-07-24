@@ -5,6 +5,10 @@ from Tkinter import *
 
 @application.route("/")
 def hello():
+    return "Oh hai Mark!"
+
+if __name__ == "__main__":
+    application.run()
     #create the window
     root = Tk()
 
@@ -14,7 +18,3 @@ def hello():
 
     #kick off the event loop
     root.mainloop()
-    return "Oh hai Mark!"
-
-if __name__ == "__main__":
-    application.run()
