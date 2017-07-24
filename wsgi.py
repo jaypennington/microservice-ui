@@ -1,4 +1,3 @@
-from Tkinter import *
 from flask import Flask
 application = Flask(__name__)
 
