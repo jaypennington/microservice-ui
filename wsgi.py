@@ -1,7 +1,6 @@
+from Tkinter import *
 from flask import Flask
 application = Flask(__name__)
-
-from Tkinter import *
 
 @application.route("/")
 def hello():
