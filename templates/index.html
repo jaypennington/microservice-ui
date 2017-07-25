@@ -14,12 +14,27 @@
  
 <body>
  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        $.getJSON('http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json', function(data) {
+        , function(data) {
         //data is the data variable
         });
     </script>
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $.getJSON('http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json', function(result){
+                $.each(result, function(i, field){
+                    $("div").append(field + " ");
+                });
+            });
+        });
+    });
+    </script>
+ 
+    <button>Get JSON data</button>
  
     <div class="container">
         <div class="header">
