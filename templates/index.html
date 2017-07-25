@@ -21,7 +21,8 @@
     <script>
      document.getElementById("give me the D").innerHTML = "test1";
         $.getJSON( "http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json", function( data ) {
-        var items = ["Placeholder"];
+        document.getElementById("give me the D").innerHTML = "test1.5";
+         var items = ["Placeholder"];
         $.each( items, function( key, val ) {
          document.getElementById("give me the D").innerHTML = "test2";
           items.push(key);
