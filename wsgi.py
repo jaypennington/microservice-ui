@@ -7,3 +7,6 @@ def hello():
 
 if __name__ == "__main__":
     application.run()
+    return render_template('index.html')
+
+    
