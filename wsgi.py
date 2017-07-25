@@ -6,7 +6,7 @@ def hello():
     return "Oh hai Mark!"
 
 if __name__ == "__main__":
-    application.run()
+    #application.run()
     return render_template('index.html')
 
     
