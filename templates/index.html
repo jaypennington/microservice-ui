@@ -20,7 +20,7 @@
     <p id="give me the D"></p>
     <script>
      document.getElementById("give me the D").innerHTML = "test1";
-        $.getJSON( "http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries", function( data, status ) {
+        $.getJSON( "http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json", function( data, status ) {
         if(status === 200){      
              document.getElementById("give me the D").innerHTML = "test1.5";
              var items = ["Placeholder"];
