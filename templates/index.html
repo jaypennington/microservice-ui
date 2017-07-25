@@ -31,13 +31,13 @@
    
      $(document).ready(function(){
       $("button").click(function(){
-       $.each([ 52, 97 ], function( index, value ) {
-        var i;
-         for (i = 0; i < cars.length; i++) {
-             text += cars[i] + "<br>";
-         }
-         document.getElementById("demo").innerHTML = text;
-              });    
+      var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+      var text = "";
+      var i;
+      for (i = 0; i < cars.length; i++) {
+          text += cars[i] + "<br>";
+      }
+      document.getElementById("demo").innerHTML = text;
             });
         });
     
