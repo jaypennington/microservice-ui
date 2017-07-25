@@ -1,9 +1,9 @@
 from flask import Flask
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route("/")
-def main():
-    return render_template('index.html')
+@application.route("/")
+def hello():
+    return "Existance is pain to a Meeseeks."
 
 if __name__ == "__main__":
-    app.run()
+    application.run()
