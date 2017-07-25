@@ -33,6 +33,7 @@
       $("button").click(function(){
        $.each([ 52, 97 ], function( index, value ) {
          document.getElementById("demo").innerHTML = "Hello JavaScript!";
+        $( "#" + index ).text( "bullshit " + value + "." );
               });    
             });
         });
