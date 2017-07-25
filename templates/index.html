@@ -23,20 +23,12 @@
  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-    $(document).ready(function(){
-        $("button").click(function(){
-            $.getJSON('http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json', function(result){
-             var obj = {
-               $.each([ 52, 97 ], function( index, value ) {
-                 alert( index + ": " + value );
-               });    
-             #$.each(result, function(i, field){
-               #     $("div").append(field + " ");
-              #  });
-            });
-        });
-    });
-     
+   
+       $.each([ 52, 97 ], function( index, value ) {
+         alert( index + ": " + value );
+       });    
+
+
     </script>
  
     <button>Get JSON data</button>
