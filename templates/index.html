@@ -26,12 +26,17 @@
     $(document).ready(function(){
         $("button").click(function(){
             $.getJSON('http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json', function(result){
-                $.each(result, function(i, field){
-                    $("div").append(field + " ");
-                });
+             var obj = {
+               $.each([ 52, 97 ], function( index, value ) {
+                 alert( index + ": " + value );
+               });    
+             #$.each(result, function(i, field){
+               #     $("div").append(field + " ");
+              #  });
             });
         });
     });
+     
     </script>
  
     <button>Get JSON data</button>
