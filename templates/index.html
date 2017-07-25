@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
  
-$.getJSON('http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json', function(data) {
-    //data is the data variable
-});
- 
 <head>
     <title>Federated Data Query</title>
  
@@ -17,6 +13,10 @@ $.getJSON('http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/countr
 </head>
  
 <body>
+ 
+$.getJSON('http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json', function(data) {
+    //data is the data variable
+}); 
  
     <div class="container">
         <div class="header">
