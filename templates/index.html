@@ -19,21 +19,28 @@
  
     <p id="the D"></p>
     <script>
-     
      document.getElementById("the D").innerHTML = "test1";
-      $.ajax
-        ({
-         type: "GET",
-         url: "http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json",
-         dataType: 'json',
-         async: false,
-         username: "teiidUser",
-         password: "redhat1!",
-         data: '{ "comment" }',
-         success: function (){
-           alert('Thanks for your comment!'); 
-         }
-        });
+     var username = "teiidUser"
+     var password = "redhat1!"
+     document.getElementById("the D").innerHTML = "test7";
+     beforeSend: function (xhr) {
+       xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
+     };
+     document.getElementById("the D").innerHTML = "test8";
+      $.getJSON( "http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json", function( data, status ) {
+
+         if(status === 200){      
+                document.getElementById("the D").innerHTML = "test1.5";
+                var items = ["Placeholder"];
+               $.each( items, function( key, val ) {
+                document.getElementById("the D").innerHTML = "test2";
+                 items.push(key);
+                 document.getElementById("the D").innerHTML = items;
+                document.getElementById("the D").innerHTML = "test3";});}
+            else{
+                 document.getElementById("the D").innerHTML = "fail";}
+         });
+
   
     </script>
  
