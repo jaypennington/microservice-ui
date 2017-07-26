@@ -25,7 +25,7 @@
      document.getElementById("the D").innerHTML = "test7";
      
      document.getElementById("the D").innerHTML = "test8";
-      $.getJSON( "http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json", function( data, status ) {
+      $.getJSON( "http://api.timezonedb.com/v2/list-time-zone?key=Q0B8OGIPT4H4&format=json", function( data, status ) {
 
          if(status === 200){      
                 document.getElementById("the D").innerHTML = "test1.5";
