@@ -43,6 +43,20 @@
     </script>
  
  
+    require('es6-promise').polyfill();
+    require('isomorphic-fetch');
+
+    fetch('http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json')
+     .then(function(response) {
+      if (response.status >= 400) {
+       throw new Error("Bad response from server");
+      }
+      return response.json();
+     })
+     .then(function(stories) {
+      console.log(stories);
+     });
+
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  
