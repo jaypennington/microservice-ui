@@ -22,19 +22,18 @@
      
      document.getElementById("the D").innerHTML = "test1";
       $.ajax
-      ({
-        type: "GET",
-        url: 'url',
-        dataType: 'json',
-        async: false,
-        headers: {
-          "Authorization": "Basic " + btoa(USERNAME + ":" + PASSWORD)
-        },
-        data: '{ "comment" }',
-        success: function (){
-          alert('Thanks for your comment!'); 
-        }
-      });
+        ({
+         type: "GET",
+         url: "http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json",
+         dataType: 'json',
+         async: false,
+         username: teiidUser,
+         password: redhat1!,
+         data: '{ "comment" }',
+         success: function (){
+           alert('Thanks for your comment!'); 
+         }
+        });
   
     </script>
  
