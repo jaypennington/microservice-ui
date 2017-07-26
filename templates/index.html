@@ -44,7 +44,7 @@
  
     <script>
     require('es6-promise').polyfill();
-    require('isomorphic-fetch');
+    require('fetch-everywhere');
 
     fetch('http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json')
      .then(function(response) {
