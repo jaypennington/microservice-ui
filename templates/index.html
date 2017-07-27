@@ -23,9 +23,23 @@
      var username = "teiidUser"
      var password = "redhat1!"
      document.getElementById("the D").innerHTML = "test7";
+     $.ajax
+       ({
+       beforeSend: function (xhr) {
+       xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
+       },
+        type: "GET",
+        url: "http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json",
+        dataType: 'json',
+        async: false,
+        data: '{ "comment" }',
+        success: function (){
+          alert('Thanks for your comment!'); 
+        }
+       });
      
-     document.getElementById("the D").innerHTML = "test8";
-      $.getJSON( "http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json", function( data, status ) {
+     /**
+     $.getJSON( "http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json", function( data, status ) {
 
          if(status === 200){      
                 document.getElementById("the D").innerHTML = "test1.5";
@@ -38,8 +52,8 @@
             else{
                  document.getElementById("the D").innerHTML = "fail";}
          });
-
-  
+         **/
+     
     </script>
  
     <!--<script>
