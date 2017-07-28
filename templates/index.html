@@ -23,8 +23,30 @@
      var username = "teiidUser"
      var password = "redhat1!"
      var token = "dGVpaWRVc2VyOnJlZGhhdDEh"
-     document.getElementById("the D").innerHTML = "test7";
      
+     
+     function createCORSRequest(method, url){
+    var xhr = new XMLHttpRequest();
+    if ("withCredentials" in xhr){
+        xhr.open(method, url, true);
+    } else if (typeof XDomainRequest != "undefined"){
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+    } else {
+        xhr = null;
+    }
+    return xhr;
+}
+     
+var request = createCORSRequest("get", "https://secure-datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json");
+if (request){
+    request.onload = function(){
+        //do something with request.responseText
+    };
+    request.send();
+}
+     
+     document.getElementById("the D").innerHTML = "test7";
      
      $.ajax({
         beforeSend: function(request) {
