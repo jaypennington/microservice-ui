@@ -32,13 +32,14 @@
         dataType: 'json',
         async: false,
       // Fetch the stored token from localStorage and set in the header
-      headers: {"Authorization": token},
-      data: '{ "comment" }',
+      headers: {"Authorization": token}
+     /** data: '{ "comment" }',
       success: function (){
         alert('Thanks for your comment!');
       }
+      **/
     });
-     
+     document.getElementById("the D").innerHTML = "test8";
      /**
      $.getJSON( "http://datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json", function( data, status ) {
 
