@@ -48,14 +48,26 @@ if (request){
 }
      **/
      
+     var url = "http://api.worldbank.org/countries"
+     var xhttp = new XMLHttpRequest();
+     xhttp.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status == 200) {
+       myfunction(this);
+      }
+     };
+     xhttp.open("GET", url, true);
+     xhttp.send();
+     
+     
      document.getElementById("the D").innerHTML = "test7";
      
+     
      $.ajax({
-        beforeSend: function(request) {
+       /**beforeSend: function(request) {
     request.setRequestHeader("Authority", token);
-        },
+        },**/
         type: "GET",
-        url: "https://secure-datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries?$format=json",
+        url: "http://api.worldbank.org/countries",
         dataType: 'json',
         async: false
       // Fetch the stored token from localStorage and set in the header
