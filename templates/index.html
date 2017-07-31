@@ -58,6 +58,16 @@ if (request){
      xhttp.open("GET", url, true);
      xhttp.send();
      
+     function myFunction(xml) {
+      var xmlDoc = xml.responseXML;
+      var counter = 0;
+      var myString = "";
+      while(counter<xmlDoc.getElementsByTagName("name").length){
+       myString += " " + xmlDoc.getElementsByTagName("name")[counter].childNodes[0].nodeValue;
+       counter++;
+      }
+      document.getElementById("the D").innerHTML = myString;
+     }
      
      document.getElementById("the D").innerHTML = "test7";
      
