@@ -22,7 +22,10 @@
      document.getElementById("the D").innerHTML = "test1";
      var username = "teiidUser"
      var password = "redhat1!"
-     var token = "dGVpaWRVc2VyOnJlZGhhdDEh"
+     //TimeZoneDB token
+     var token = "Q0B8OGIPT4H4"
+     //Openshift token
+     //var token = "dGVpaWRVc2VyOnJlZGhhdDEh"
      
      /**
      
@@ -47,8 +50,8 @@ if (request){
     request.send();
 }
      **/
-     var url = "https://secure-datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries"
-     //var url = "http://api.timezonedb.com/v2/list-time-zone?key=Q0B8OGIPT4H4"
+     //var url = "https://secure-datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries"
+     var url = "http://api.timezonedb.com/v2/list-time-zone"
      //var url = "http://api.worldbank.org/countries"
      var xhttp = new XMLHttpRequest();
      xhttp.onreadystatechange = function() {
@@ -63,8 +66,8 @@ if (request){
       var xmlDoc = xml.responseXML;
       var counter = 0;
       var myString = "";
-      while(counter<xmlDoc.getElementsByTagName("country").length){
-       myString += " " + xmlDoc.getElementsByTagName("country")[counter].childNodes[0].nodeValue;
+      while(counter<xmlDoc.getElementsByTagName("countryName").length){
+       myString += " " + xmlDoc.getElementsByTagName("countryName")[counter].childNodes[0].nodeValue;
        counter++;
       }
       document.getElementById("the D").innerHTML = myString;
@@ -74,11 +77,11 @@ if (request){
      
      
      $.ajax({
-      /**
+      
        beforeSend: function(request) {
     request.setRequestHeader("Authority", token);
         },
-        **/
+        
         type: "GET",
         url: url,
         dataType: 'xml',
