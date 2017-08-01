@@ -47,8 +47,8 @@
       var xmlDoc = xml.responseXML;
       var counter = 0;
       var myString = "";
-      while(counter<xmlDoc.getElementsByTagName("temperature").length){
-       myString += " " + xmlDoc.getElementsByTagName("temperature")[counter].childNodes[0].nodeValue;
+      while(counter<xmlDoc.getElementsByTagName("ZIP").length){
+       myString += " " + xmlDoc.getElementsByTagName("ZIP")[counter].childNodes[0].nodeValue;
        counter++;
       }
       document.getElementById("the D").innerHTML = myString;
