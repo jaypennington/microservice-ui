@@ -23,13 +23,17 @@
      var username = "teiidUser"
      var password = "redhat1!"
      //TimeZoneDB token
-     var token = "Q0B8OGIPT4H4"
+     //var token = "Q0B8OGIPT4H4"
      //Openshift token
      //var token = "dGVpaWRVc2VyOnJlZGhhdDEh"
+     //NOAA token
+     var token = "dQrftJTdlBraPXojLsTzoNmbVciCWXVA"
+
      
      //var url = "https://secure-datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries"
-     var url = "http://api.timezonedb.com/v2/list-time-zone"
+     //var url = "http://api.timezonedb.com/v2/list-time-zone"
      //var url = "http://api.worldbank.org/countries"
+     var url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/datasets"
      var xhttp = new XMLHttpRequest();
      xhttp.onreadystatechange = function() {
       if(this.readyState == 4 && this.status == 200) {
@@ -43,8 +47,8 @@
       var xmlDoc = xml.responseXML;
       var counter = 0;
       var myString = "";
-      while(counter<xmlDoc.getElementsByTagName("countryName").length){
-       myString += " " + xmlDoc.getElementsByTagName("countryName")[counter].childNodes[0].nodeValue;
+      while(counter<xmlDoc.getElementsByTagName("temperature").length){
+       myString += " " + xmlDoc.getElementsByTagName("temperature")[counter].childNodes[0].nodeValue;
        counter++;
       }
       document.getElementById("the D").innerHTML = myString;
@@ -67,7 +71,8 @@
         async: false,
         data: '{ "comment" }',
         headers:{
-         Authorization: 'key=Q0B8OGIPT4H4'
+         //Authorization: 'key=Q0B8OGIPT4H4'
+        token: token
         }
         
       // Fetch the stored token from localStorage and set in the header
