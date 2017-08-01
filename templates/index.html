@@ -65,7 +65,7 @@
         url: url,
         dataType: 'xml',
         async: false,
-        data: { zoneName: zoneName }
+        data: '{ "comment" }'
         //headers:{
         // Authorization: 'key=Q0B8OGIPT4H4'
         //}
@@ -81,7 +81,7 @@
           
    
      
-     }).done(function (data) {
+     }).done(function (comment) {
         alert('Success?');
      }).fail(function (jqXHR, textStatus) {
          alert('Fail?');
