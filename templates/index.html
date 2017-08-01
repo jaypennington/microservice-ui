@@ -54,21 +54,21 @@
      
      
      $.ajax({
-     
+     /**
        beforeSend: function(xhttp) {
         Authorization: 'key=Q0B8OGIPT4H4'
         xhttp.setRequestHeader("Authority", token);
     //request.setRequestHeader("Authority", token);
         },
-        
+        **/
         type: "GET",
         url: url,
         dataType: 'xml',
         async: false,
         data: '{ "comment" }'
-        //headers:{
-        // Authorization: 'key=Q0B8OGIPT4H4'
-        //}
+        headers:{
+         Authorization: 'key=Q0B8OGIPT4H4'
+        }
         
       // Fetch the stored token from localStorage and set in the header
       /**
