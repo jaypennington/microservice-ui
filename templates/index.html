@@ -27,13 +27,16 @@
      //Openshift token
      //var token = "dGVpaWRVc2VyOnJlZGhhdDEh"
      //NOAA token
-     var token = "dQrftJTdlBraPXojLsTzoNmbVciCWXVA"
+     //var token = "dQrftJTdlBraPXojLsTzoNmbVciCWXVA"
+     //OpenWeatherMap token
+     var token = "b1b15e88fa797225412429c1c50c122a1"
 
      
      //var url = "https://secure-datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries"
      //var url = "http://api.timezonedb.com/v2/list-time-zone"
      //var url = "http://api.worldbank.org/countries"
-     var url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/#datasets"
+     //var url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/#datasets"
+     var url = "http://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b1b15e88fa797225412429c1c50c122a1"
      var xhttp = new XMLHttpRequest();
      xhttp.onreadystatechange = function() {
       if(this.readyState == 4 && this.status == 200) {
@@ -47,8 +50,8 @@
       var xmlDoc = xml.responseXML;
       var counter = 0;
       var myString = "";
-      while(counter<xmlDoc.getElementsByTagName("ZIP").length){
-       myString += " " + xmlDoc.getElementsByTagName("ZIP")[counter].childNodes[0].nodeValue;
+      while(counter<xmlDoc.getElementsByTagName("base").length){
+       myString += " " + xmlDoc.getElementsByTagName("base")[counter].childNodes[0].nodeValue;
        counter++;
       }
       document.getElementById("the D").innerHTML = myString;
@@ -70,10 +73,10 @@
         dataType: 'xml',
         async: false,
         data: '{ "comment" }',
-        headers:{
+        //headers:{
          //Authorization: 'key=Q0B8OGIPT4H4'
-        token: "dQrftJTdlBraPXojLsTzoNmbVciCWXVA"
-        }
+       // token: "dQrftJTdlBraPXojLsTzoNmbVciCWXVA"
+        //}
         
       // Fetch the stored token from localStorage and set in the header
       /**
