@@ -25,11 +25,11 @@
      //TimeZoneDB token
      //var token = "Q0B8OGIPT4H4"
      //Openshift token
-     //var token = "dGVpaWRVc2VyOnJlZGhhdDEh"
+     var token = "dGVpaWRVc2VyOnJlZGhhdDEh"
      //NOAA token
      //var token = "dQrftJTdlBraPXojLsTzoNmbVciCWXVA"
      //OpenWeatherMap token
-     var token = "b1b15e88fa797225412429c1c50c122a1"
+     //var token = "b1b15e88fa797225412429c1c50c122a1"
 
      
      var url = "https://secure-datavirt-app-web-service.rhel-cdk.10.1.2.2.xip.io/odata/country-ws/country.Countries"
@@ -73,10 +73,11 @@
         dataType: 'xml',
         async: false,
         data: '{ "comment" }',
-        //headers:{
+        headers:{
          //Authorization: 'key=Q0B8OGIPT4H4'
        // token: "dQrftJTdlBraPXojLsTzoNmbVciCWXVA"
-        //}
+         token: token
+        }
         
       // Fetch the stored token from localStorage and set in the header
       /**
